@@ -1,0 +1,9 @@
+body {
+	background-color: blue;
+	color: white;
+} 
+img {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
