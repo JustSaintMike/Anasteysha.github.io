@@ -10,6 +10,13 @@
 <h1 align="center" > Timetable </h1>
 <p align="center"> На этой странице представлено расписание </p>
 <img src="image.jpg"/>
+
+
+
+
+
+				 <input type="button" class="button" value="Ja knopchko"/>
+				
 <br>
 <input type="button" onclick="Desctop()" value="Help"/>
 <p align="center" class="big"> <i>Список группы</i> </p>
@@ -33,5 +40,43 @@
 <input type="button" onclick="Project()" value="OK"/>
 <a href="bloc.html" target="_blank"> <br> <br> Хочешь большее?</a>
 <script src="indexA.js"></script>
+
+<script>
+
+document.querySelector(".button").addEventListener('click', function () {
+	// 1. Создаём новый объект XMLHttpRequest
+	var xhr = new XMLHttpRequest();
+
+	// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
+	xhr.open('GET', 'https://httpbin.org/user-agent', false);
+
+	// 3. Отсылаем запрос
+	xhr.send();
+
+	// 4. Если код ответа сервера не 200, то это ошибка
+	if (xhr.status != 200) {
+		// обработать ошибку
+		alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+	} else {
+		// вывести результат
+
+		console.log('Вы нажали кнопачку \n ПриФФки!!11!АдынАдын \n ');
+		var parsedJSON = JSON.parse(xhr.responseText); 
+		console.dir();
+		alert(parsedJSON["user-agent"] ); // responseText -- текст ответа.
+		
+		var pic = new Image();
+		pic.src = "http://httpbin.org/image/jpeg";
+		document.body.appendChild(pic);
+		
+		var pic1 = new Image();
+		pic1.width = "200";
+		pic1.src = "https://www.justcolor.net/wp-content/uploads/sites/1/nggallery/mandalas/mandala-flower-with-leaves.jpg";
+		document.body.appendChild(pic1);
+		
+	}
+});
+				 
+</script>
 </body>
 </html>
